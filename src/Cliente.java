@@ -13,11 +13,20 @@ public class Cliente {
     public Cliente() {
     }
 
+    public void alquilarPelicula(DVD p){
+        peliculasAlquiladas.add(p);
+    }
+
+    public void devolverPelicula(DVD p){
+        peliculasAlquiladas.remove(p);
+    }
+
+
     @Override
     public boolean equals(Object o) {
         boolean result=false;
         if(o instanceof Cliente){
-            if(((Cliente) o).nombre.toLowerCase().equals(this.nombre)){
+            if(((Cliente) o).nombre.toLowerCase().equals(this.nombre.toLowerCase())){
                 result=true;
             }
         }
